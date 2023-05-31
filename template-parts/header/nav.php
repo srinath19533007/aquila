@@ -2,7 +2,6 @@
 /**
  * Header Navigation Template
  *
- *
  * @package Aquila
  *
  */
