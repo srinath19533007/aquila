@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file
+ * Aquila Header file
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -14,24 +14,16 @@
  * @since Aquila 1.0
  */
 ?>
-<?php get_header(); ?>
-<div class="content">
-	<h1>Hello World</h1>
-	<?php single_post_title(); ?>
+<!DOCTYPE html>
+<html lang="<?php language_attributes(); ?>">
 
-	<?php
-	if (have_posts()) {
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <?php wp_head(); ?>
+</head>
 
-		// Load posts loop.
-		while (have_posts()) {
-			the_post();
-
-		}
-	} else {
-
-	}
-	?>
-</div>
-
-
-<?php get_footer(); ?>
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
