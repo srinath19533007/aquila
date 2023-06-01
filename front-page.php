@@ -1,6 +1,6 @@
 <?php
 /**
- * Aquila Footer file
+ * Front Page Template
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -9,18 +9,28 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
-<<<<<<< HEAD
- * @package WordPress
- * @subpackage Aquila
-=======
  * @package Aquila
->>>>>>> refs/remotes/origin/main
  * @since Aquila 1.0
  */
 ?>
-</div>
-</div>
-<?php wp_footer(); ?>
-</body>
+<?php get_header(); ?>
+<div class="content">
+	<h1>Front Page</h1>
+	<?php single_post_title(); ?>
 
-</html>
+	<?php
+	if (have_posts()) {
+
+		// Load posts loop.
+		while (have_posts()) {
+			the_post();
+
+		}
+	} else {
+
+	}
+	?>
+</div>
+
+
+<?php get_footer(); ?>
