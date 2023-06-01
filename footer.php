@@ -9,12 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
-<<<<<<< HEAD
- * @package WordPress
- * @subpackage Aquila
-=======
  * @package Aquila
->>>>>>> refs/remotes/origin/main
  * @since Aquila 1.0
  */
 ?>
