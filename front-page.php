@@ -1,6 +1,6 @@
 <?php
 /**
- * The Main Template File
+ * Front Page Template
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -15,7 +15,7 @@
 ?>
 <?php get_header(); ?>
 <div class="content">
-	<h1>Hello World</h1>
+	<h1>Front Page</h1>
 	<?php single_post_title(); ?>
 
 	<?php

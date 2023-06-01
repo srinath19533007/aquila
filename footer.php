@@ -9,8 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package WordPress
- * @subpackage Aquila
+ * @package Aquila
  * @since Aquila 1.0
  */
 ?>
