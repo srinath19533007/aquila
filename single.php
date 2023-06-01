@@ -1,7 +1,6 @@
 <?php
-
 /**
- * The Main Template File
+ * Single Post Page Template
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -15,20 +14,24 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="container text-center">
-	<h1><?php single_post_title(); ?></h1>
-	<div class="row">
-		<?php $index = 0;
-		$no_of_columns = 3; ?>
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-				<?php if (0 === $index % $no_of_columns) : ?>
-					<div class="col-lg-4 col-md-6 col-sm-12">
-						<?php the_content();
-						$index++; ?>
-					</div>
-				<?php endif; ?>
-			<?php endwhile; ?>
-		<?php endif; ?>
-	</div>
+<div class="content container">
+	<h1>Single Post Page</h1>
+	<?php single_post_title(); ?>
+
+	<?php
+	if (have_posts()) {
+
+		// Load posts loop.
+		while (have_posts()) {
+			the_post();
+            the_title();
+            the_excerpt();
+		}
+	} else {
+
+	}
+	?>
 </div>
+
+
 <?php get_footer(); ?>

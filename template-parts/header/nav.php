@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Header Navigation Template
  *
@@ -15,37 +16,35 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
 // wp_die();
 ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
+    <div class="container">
         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
         <?php
         if (function_exists('the_custom_logo')) {
             the_custom_logo();
         }
         ?>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <?php if (!empty($header_menus) && is_array($header_menus)): ?>
+            <?php if (!empty($header_menus) && is_array($header_menus)) : ?>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <?php foreach ($header_menus as $menu_item): ?>
-                        <?php if (!$menu_item->menu_item_parent): ?>
+                    <?php foreach ($header_menus as $menu_item) : ?>
+                        <?php if (!$menu_item->menu_item_parent) : ?>
                             <?php $child_menu_items = $menu_class->get_child_menu_items($header_menus, $menu_item->ID); ?>
 
                             <?php $has_children = !empty($child_menu_items) && is_array($child_menu_items); ?>
-                            <?php if (!$has_children): ?>
+                            <?php if (!$has_children) : ?>
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="<?php echo esc_url($menu_item->url); ?>"><?php echo esc_html($menu_item->title); ?></a>
                                 </li>
-                            <?php else: ?>
+                            <?php else : ?>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <?php echo esc_html($menu_item->title); ?>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <?php foreach ($child_menu_items as $child_menu_item): ?>
+                                        <?php foreach ($child_menu_items as $child_menu_item) : ?>
                                             <li><a class="dropdown-item" href="<?php echo esc_url($child_menu_item->url); ?>"><?php echo esc_html($child_menu_item->title); ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
