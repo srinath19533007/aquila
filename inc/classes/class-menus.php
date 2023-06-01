@@ -21,8 +21,10 @@ class Menus
 
     protected function setup_hooks()
     {
-        // actions & filters
+        // actions
         add_action('init', [$this, 'register_menus']);
+        // filters
+        add_filter('get_custom_logo', [$this, 'add_class_to_custom_logo']);
     }
 
     public function register_menus()
@@ -60,4 +62,11 @@ class Menus
         }
         return $child_menus;
     }
+
+    public function add_class_to_custom_logo($html)
+    {
+        $html = str_replace('custom-logo-link', 'navbar-brand', $html);
+        return $html;
+    }
+
 }
