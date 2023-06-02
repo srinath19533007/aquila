@@ -14,9 +14,11 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="content">
-	<h1>Front Page</h1>
-	<?php single_post_title(); ?>
+<div class="content container">
+	<h1>
+		<?php single_post_title(); ?>
+	</h1>
+
 
 	<?php
 	if (have_posts()) {
