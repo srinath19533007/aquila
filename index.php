@@ -7,10 +7,13 @@
  */
 ?>
 <?php get_header(); ?>
-<h1 class="text-center">
-	<?php single_post_title(); ?>
-</h1>
+
 <div class="container">
+	<div class="row my-5">
+		<h1>
+			<?php single_post_title(); ?>
+		</h1>
+	</div>
 	<?php $index = 0;
 	$no_of_columns = 3; ?>
 	<?php if (have_posts()): ?>

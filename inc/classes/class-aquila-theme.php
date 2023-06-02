@@ -46,6 +46,10 @@ class AQUILA_THEME
             'default-repeat' => 'no-repeat',
         ]);
         add_theme_support('post-thumbnails');
+        /**
+         * Register image sizes.
+         */
+        add_image_size('featured-large', 350, 233, true);
         add_theme_support('automatic-feed-links');
         add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script'));
         add_editor_style();

@@ -18,3 +18,8 @@ Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, 
 Aquila WordPress Theme, (C) 2020 WordPress.org
 Aquila is distributed under the terms of the GNU GPL.
 */
+
+img {
+  width: 100%;
+  height: auto;
+}
