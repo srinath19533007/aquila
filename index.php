@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The Main Template File
  *
@@ -7,31 +8,20 @@
  */
 ?>
 <?php get_header(); ?>
-
-<div class="container">
-	<div class="row my-5">
-		<h1>
-			<?php single_post_title(); ?>
-		</h1>
-	</div>
-	<?php $index = 0;
-	$no_of_columns = 3; ?>
-	<?php if (have_posts()): ?>
-		<?php while (have_posts()):
-			the_post(); ?>
-			<?php if (0 === $index % $no_of_columns): ?>
-				<div class="row">
+<div class="container text-center">
+	<h1><?php single_post_title(); ?></h1>
+	<div class="row">
+		<?php $index = 0;
+		$no_of_columns = 3; ?>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<?php if (0 === $index % $no_of_columns) : ?>
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<?php the_content();
+						$index++; ?>
+					</div>
 				<?php endif; ?>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<?php get_template_part('template-parts/content'); ?>
-				</div>
-				<?php $index++;
-				if (0 !== $index && 0 === $index % $no_of_columns): ?>
-				</div>
-			<?php endif; ?>
-		<?php endwhile; ?>
-	<?php else: ?>
-		<?php get_template_part('template-parts/content-none'); ?>
-	<?php endif; ?>
+			<?php endwhile; ?>
+		<?php endif; ?>
+	</div>
 </div>
 <?php get_footer(); ?>
